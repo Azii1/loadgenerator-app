@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning repository...'
                 git branch: 'main',
-                    url: 'https://github.com/Azii1/voteapp-app.git',
+                    url: 'https://github.com/Azii1/loadgenerator-app.git',
                     credentialsId: 'Github-credentials'
             }
         }
