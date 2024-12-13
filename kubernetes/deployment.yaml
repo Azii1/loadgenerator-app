@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: load-generator
+  name: loadgenerator-app
   labels:
     app: load-generator
 spec:
