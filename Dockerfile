@@ -1,7 +1,16 @@
 FROM python:3.9-slim
-WORKDIR /app
-EXPOSE 5000
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+
+# add apache bench (ab) tool
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    apache2-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /seed
+
 COPY . .
-CMD ["python", "app.py"]
+
+# create POST data files with ab friendly formats
+RUN python make-data.py
+
+CMD /seed/generate-votes.sh
