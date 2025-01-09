@@ -3,22 +3,19 @@ kind: Deployment
 metadata:
   name: loadgenerator-app
   labels:
-    app: load-generator
+    app: load
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: load-generator
+      app: load
   template:
     metadata:
       labels:
-        app: load-generator
+        app: load
     spec:
       containers:
-      - name: load-generator
+      - name: load
         image: azii1/loadgenerator-app:latest
-        env:
-        - name: VOTE_API_URL
-          value: "http://vote-service"
         ports:
         - containerPort: 80
