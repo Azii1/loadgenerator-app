@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loadgenerator-app
+  name: load
   labels:
-    app: load
+    app: loadgenerator-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: load
+      app: loadgenerator-app
   template:
     metadata:
       labels:
-        app: load
+        app: loadgenerator-app
     spec:
       containers:
       - name: load
