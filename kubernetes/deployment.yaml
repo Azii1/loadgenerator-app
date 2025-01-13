@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: load
+  name: load-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: loadgeneratorapp-app
+      app: load
   template:
     metadata:
       labels:
-        app: loadgeneratorapp-app
+        app: load
     spec:
       containers:
-      - name: loadgeneratorapp-app
+      - name: load-container
         image: azii1/loadgeneratorapp-app:latest
         ports:
         - containerPort: 80
