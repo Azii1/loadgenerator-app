@@ -21,7 +21,7 @@ pipeline {
         stage('Tag Docker Image') {
             steps {
                 echo 'Tagging Docker image...'
-                sh 'docker tag my-app-image azii1/loadgenerator-app:latest'
+                sh 'docker tag my-app-image azii1/loadgeneratorapp-app:latest'
             }
         }
         
@@ -36,7 +36,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 echo 'Pushing Docker image...'
-                sh 'docker push azii1/loadgenerator-app:latest'
+                sh 'docker push azii1/loadgeneratorapp-app:latest'
             }
         }
     }
