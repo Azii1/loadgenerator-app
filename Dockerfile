@@ -11,6 +11,6 @@ WORKDIR /seed
 COPY . .
 
 # create POST data files with ab friendly formats
-RUN python loadgenerator.py
+RUN python Loadgenerator.py
 
 CMD /seed/generate-votes.sh
