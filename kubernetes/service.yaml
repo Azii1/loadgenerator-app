@@ -4,7 +4,7 @@ metadata:
   name: load-generator-service
 spec:
   selector:
-    app: loadgenerator-app
+    app: loadgeneratorapp-app
   ports:
     - protocol: TCP
       port: 80
